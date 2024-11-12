@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>聲波</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="CD">
+            <div class="CDrotate">
+                <img id="CDImg">
+                <img id="logoImg">
+            </div>
+        </div>
+        <div class="gradient"></div>
+        <div class="wave">
+            <canvas id="canvas"></canvas>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="audio_progress">
+            <div id="progress_bg">
+                <div id="progress_bar"></div>
+            </div>
+            <div class="progress_dotBox">
+                <div id="progress_dot"></div>
+            </div>
+        </div>
+
+        <!-- <div class="logo">
+            <img id="logoImg">
+        </div> -->
+        <div class="fakemenu"></div>
+
+        <input type="text" id="singerName" placeholder="請輸入原唱名字" />
+        <input type="text" id="musicName" placeholder="請輸入歌名" />
+
+    </div>
+
+    <div class="inputs">
+        <label for="uploadMusic" class="uploadMusic">
+            選擇音檔
+            <input type="file" id="uploadMusic" name="uploadMusic" accept="audio/*" />
+        </label>
+        <label for="uploadImg" class="uploadImg">
+            選擇唱片圖檔
+            <input type="file" id="uploadImg" name="uploadImg" accept="image/*" />
+        </label>
+        <label for="uploadLogo" class="uploadLogo">
+            選擇logo圖檔
+            <input type="file" id="uploadLogo" name="uploadLogo" accept="image/*" />
+        </label>
+        <label for="uploadColor" class="uploadColor">
+            輸入代表色碼(hex)
+            <input type="text" id="uploadColor" name="uploadColor" placeholder="例:#9076b7" maxlength="7"/>
+        </label>
+    </div>
+
+    <div class="audio_control">
+        <button id="playBtn">播放</button>
+        <button id="pauseBtn">暫停</button>
+        <audio crossorigin="anonymous" id="audio" controls></audio>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="//code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="main.js"></script>
+
+
+</body>
+
+</html>

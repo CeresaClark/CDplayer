@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap');
+
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 2000px;
+    height: 1080px;
+}
+
+.main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1080px;
+    height: 1920px;
+    background-color: #f2f2f2;
+    /* background: url(img/對位置.jpg); */
+}
+
+.CD{
+    position: absolute;
+    top: -350px;
+    left: 0px;
+    width: 1080px;
+    height: 1358px;
+    filter: drop-shadow(rgba(0, 0, 0, 0.4) 0px 15px 20px);
+    overflow: hidden;
+}
+
+.CDrotate{
+    position: absolute;
+    top: 0px;
+    left: -140px;
+    transform-origin: 50% 50%;
+    width: 1358px;
+    height: 1358px;
+    -webkit-mask: url(img/CD.png);
+    animation: CDplay 20s infinite linear;
+    animation-play-state: paused;
+}
+
+#CDImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#logoImg{
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 80%;
+    height: 300px;
+    object-fit: contain;
+    filter: drop-shadow(0px 15px 20px rgba(0, 0, 0, 0.5));
+}
+
+.gradient{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 350px;
+    background-color: #000;
+    -webkit-mask-image: linear-gradient(to bottom,#ffffff,#ffffff00);
+}
+
+.wave{
+    position: absolute;
+    top: 1350px;
+    left: 90px;
+    width: 900px;
+    height: 255px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#canvas{
+    position: absolute;
+    left: -8075px;
+}
+
+.wave div{
+    width: 100%;
+    height: 5px;
+    z-index: 1;
+    background-color: #f2f2f2;
+}
+
+audio {
+    position: absolute;
+    top: 150px;
+    left: 0px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+audio::-webkit-media-controls-panel { /*控制面板*/
+    
+}
+
+audio::-webkit-media-controls-play-button{/* 播放按鈕 */
+    display: none;
+}
+
+audio::-webkit-media-controls-mute-button{ /* 音量按鈕 */
+    
+}
+
+audio::-webkit-media-controls-time-remaining-display{ /* 目前播放時長 */
+    display: none;
+}
+
+audio::-webkit-media-controls-current-time-display{/* 總時長 */
+    display: none;
+}
+
+.audio_progress{
+    position: absolute;
+    top: 1620px;
+    left: 8%;
+    width: 84%;
+    height: 70px;
+    pointer-events: none;
+}
+
+#progress_bg{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    margin: 0;
+    border-radius: 5px;
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background-color: rgb(201, 201, 201);
+    overflow: hidden;
+}
+
+.progress_dotBox{
+    position: absolute;
+    top: 13.5px;
+    width: calc(100% - 43px);
+    height: 43px;
+}
+
+#progress_dot{
+    position: absolute;
+    top: 0px;
+    left: 0%;
+    width: 43px;
+    height: 43px;
+    border-radius: 100%;
+    background-color: #000;
+}
+
+#progress_bar{
+    position: absolute;
+    top: -5px;
+    left: -100%;
+    margin: 0;
+    border-radius: 5px;
+    width: 100%;
+    height: 20px;
+    background-color: #000;
+}
+
+.logo{
+    position: absolute;
+    top: 26%;
+    width: 100%;
+    height: 435px;
+}
+
+#logoImg{
+    /* width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0px 15px 20px rgba(0, 0, 0, 0.5)); */
+}
+
+.fakemenu{
+    position: absolute;
+    top: 66px;
+    left: 70px;
+    width: 84px;
+    height: 10px;
+    background-color: #fff;
+}
+
+.fakemenu::before,.fakemenu::after{
+    position: absolute;
+    content: '';
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #fff;
+}
+
+.fakemenu::after{
+    top: 60px;
+}
+
+#singerName{
+    position: absolute;
+    top: 1126px;
+    width: 100%;
+    height: 70px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font-size: 50px;
+    text-align: center;
+    color: #c9c9c9;
+    font-family: "Noto Sans SC", sans-serif;
+    font-weight: 400;
+}
+
+#musicName{
+    position: absolute;
+    top: 1195px;
+    width: 100%;
+    height: 130px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font-size: 120px;
+    text-align: center;
+    color: #000;
+    font-family: "Noto Sans SC", sans-serif;
+    font-weight: 300;
+}
+
+.inputs{
+    position: absolute;
+    top: 10px;
+    left: 1100px;
+    width: 600px;
+    height: 700px;
+    overflow-x: hidden;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+label{
+    position: absolute;
+    font-size: 50px;
+}
+
+.uploadMusic{
+    top: 10px;
+}
+.uploadImg{
+    top: 180px;
+}
+.uploadLogo{
+    top: 350px;
+}
+.uploadColor{
+    top: 520px;
+}
+#uploadColor{
+    width: 500px;
+}
+
+#uploadImg,#uploadMusic,#uploadLogo,#uploadColor{
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    z-index: 100;
+    font-size: 50px;
+}
+
+
+.audio_control{
+    position: absolute;
+    top: 750px;
+    left: 1100px;
+    width: 600px;
+    height: 500px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#playBtn,#pauseBtn{
+    width: 30%;
+    height: 100px;
+    font-size: 50px;
+    background-color: #ffffff;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+@keyframes CDplay{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
