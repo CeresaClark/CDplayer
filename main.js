@@ -61,6 +61,11 @@ $("#uploadMusic").change(function () {
         audio.volume = $("#audioVolume").val() / 100
     })
 
+    //音樂播完唱片停止
+    audio.addEventListener("ended", (event) => {
+        $('.CDrotate').css('animation-play-state', 'paused')
+    });
+
 });
 
 let color = '#000'
@@ -152,6 +157,18 @@ $("#LogoPositionSize").on('input', function () {
     $("#logoImg").css('transform', 'scale(' + $("#LogoPositionSize").val() + '%)')
 })
 
+//logo陰影樣式
+$('#whiteShadow').on('input', function () {
+    $("#logoImg").css('filter', 'drop-shadow(0 15px 20px #fff)')
+})
+
+$('#blackShadow').on('input', function () {
+    $("#logoImg").css('filter', 'drop-shadow(0 15px 20px #000)')
+})
+
+$('#noShadow').on('input', function () {
+    $("#logoImg").css('filter', 'none')
+})
 
 function uploadlogoImg(input) {
     if (input.files && input.files[0]) {
@@ -182,3 +199,4 @@ function uploadColor(input) {
 function singerNameMarquee() {
 
 }
+

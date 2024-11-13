@@ -63,7 +63,7 @@
             <input type="range" id="CDposition" max="100" value="50" />
         </label>
 
-        <label for="uploadLogo" class="uploadLogo">
+        <label  class="uploadLogo">
             選擇logo圖檔
             <input type="file" id="uploadLogo" name="uploadLogo" accept="image/*" />
             上下位移
@@ -72,6 +72,23 @@
             <input type="range" id="LogoPositionLeft" value="0" max="100" min="-100" />
             尺寸
             <input type="range" id="LogoPositionSize" value="100" max="200" />
+
+            <div class="radio">
+                <label for="whiteShadow">
+                    <input type="radio" id="whiteShadow"  name="contact"/>
+                    白色陰影
+                </label>
+
+                <label for="blackShadow">
+                    <input type="radio" id="blackShadow"  name="contact"/>
+                    黑色陰影
+                </label>
+
+                <label for="noShadow">
+                    <input type="radio" id="noShadow"  name="contact"/>
+                    無陰影
+                </label>
+            </div>
         </label>
 
         <label for="uploadColor" class="uploadColor">
