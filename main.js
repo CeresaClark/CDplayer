@@ -55,6 +55,12 @@ $("#uploadMusic").change(function () {
         $('#progress_dot').css('left', (audio.currentTime / audio.duration * 100) + '%')
     }, 100);
 
+
+    //調整音樂音量
+    $("#audioVolume").on('input', function () {
+        audio.volume = $("#audioVolume").val() / 100
+    })
+
 });
 
 let color = '#000'
@@ -101,11 +107,6 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
 }
 
 
-
-
-
-
-
 //上傳CD
 $("#uploadImg").change(function () {
     uploadCDImg(this);
@@ -120,6 +121,36 @@ $("#uploadLogo").change(function () {
 $("#uploadColor").change(function () {
     uploadColor($("#uploadColor").val());
 });
+
+//輸入原唱名字
+$("#singerName").change(function () {
+    $('.singerName').html($("#singerName").val())
+});
+
+//輸入歌名
+$("#musicName").change(function () {
+    $('.musicName').html($("#musicName").val())
+});
+
+//調整CD位置
+$("#CDposition").on('input', function () {
+    $("#CDImg").css('object-position', $("#CDposition").val() + '%')
+})
+
+//調整logo上下位置
+$("#LogoPositionTop").on('input', function () {
+    $("#logoImg").css('top', $("#LogoPositionTop").val() + '%')
+})
+
+//調整logo左右位置
+$("#LogoPositionLeft").on('input', function () {
+    $("#logoImg").css('left', $("#LogoPositionLeft").val() + '%')
+})
+
+//調整logo尺寸
+$("#LogoPositionSize").on('input', function () {
+    $("#logoImg").css('transform', 'scale(' + $("#LogoPositionSize").val() + '%)')
+})
 
 
 function uploadlogoImg(input) {
@@ -143,7 +174,11 @@ function uploadCDImg(input) {
 }
 
 function uploadColor(input) {
-    $('#musicName').css('color', input)
+    $('.musicName').css('color', input)
     $('.gradient,#progress_dot,#progress_bar').css('background-color', input)
     color = input
+}
+
+function singerNameMarquee() {
+
 }

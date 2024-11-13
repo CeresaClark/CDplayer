@@ -6,6 +6,7 @@ body {
     margin: 0;
     width: 2000px;
     height: 1080px;
+    background-color: #000;
 }
 
 .main{
@@ -15,7 +16,6 @@ body {
     width: 1080px;
     height: 1920px;
     background-color: #f2f2f2;
-    /* background: url(img/對位置.jpg); */
 }
 
 .CD{
@@ -44,15 +44,26 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: 50%;
+}
+
+.logowrap{
+    position: absolute;
+    bottom: 1%;
+    left: 0%;
+    width: 100%;
+    height: 540px;
+    overflow: hidden;
 }
 
 #logoImg{
     position: absolute;
-    bottom: 10%;
-    left: 10%;
-    width: 80%;
-    height: 300px;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    transform: scale(1);
     filter: drop-shadow(0px 15px 20px rgba(0, 0, 0, 0.5));
 }
 
@@ -88,34 +99,6 @@ body {
     height: 5px;
     z-index: 1;
     background-color: #f2f2f2;
-}
-
-audio {
-    position: absolute;
-    top: 150px;
-    left: 0px;
-    padding-bottom: 10px;
-    width: 100%;
-}
-
-audio::-webkit-media-controls-panel { /*控制面板*/
-    
-}
-
-audio::-webkit-media-controls-play-button{/* 播放按鈕 */
-    display: none;
-}
-
-audio::-webkit-media-controls-mute-button{ /* 音量按鈕 */
-    
-}
-
-audio::-webkit-media-controls-time-remaining-display{ /* 目前播放時長 */
-    display: none;
-}
-
-audio::-webkit-media-controls-current-time-display{/* 總時長 */
-    display: none;
 }
 
 .audio_progress{
@@ -168,19 +151,6 @@ audio::-webkit-media-controls-current-time-display{/* 總時長 */
     background-color: #000;
 }
 
-.logo{
-    position: absolute;
-    top: 26%;
-    width: 100%;
-    height: 435px;
-}
-
-#logoImg{
-    /* width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0px 15px 20px rgba(0, 0, 0, 0.5)); */
-}
 
 .fakemenu{
     position: absolute;
@@ -205,94 +175,183 @@ audio::-webkit-media-controls-current-time-display{/* 總時長 */
     top: 60px;
 }
 
-#singerName{
+
+.singerName_wrap{
     position: absolute;
     top: 1126px;
-    width: 100%;
+    left: 15%;
+    width: 70%;
     height: 70px;
-    padding: 0;
-    border: none;
-    background-color: transparent;
+    overflow: hidden;
+    /* background-color: aqua; */
+}
+
+.singerName{
+    position: absolute;
+    top: 0px;
+    left: 0%;
+    height: 70px;
     font-size: 50px;
     text-align: center;
     color: #c9c9c9;
     font-family: "Noto Sans SC", sans-serif;
     font-weight: 400;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
 }
 
-#musicName{
+.musicName_wrap{
     position: absolute;
     top: 1195px;
-    width: 100%;
+    left: 2.5%;
+    width: 95%;
     height: 130px;
-    padding: 0;
-    border: none;
-    background-color: transparent;
+    overflow: hidden;
+}
+
+.musicName{
+    position: absolute;
+    top: 0px;
+    height: 100%;
     font-size: 120px;
+    line-height: 120px;
     text-align: center;
     color: #000;
     font-family: "Noto Sans SC", sans-serif;
     font-weight: 300;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
 }
 
-.inputs{
+.control_panel{
     position: absolute;
-    top: 10px;
+    top: 5px;
     left: 1100px;
     width: 600px;
-    height: 700px;
-    overflow-x: hidden;
-    background-color: #ffffff;
-    padding: 10px;
-}
-
-label{
-    position: absolute;
-    font-size: 50px;
-}
-
-.uploadMusic{
-    top: 10px;
-}
-.uploadImg{
-    top: 180px;
-}
-.uploadLogo{
-    top: 350px;
-}
-.uploadColor{
-    top: 520px;
-}
-#uploadColor{
-    width: 500px;
-}
-
-#uploadImg,#uploadMusic,#uploadLogo,#uploadColor{
-    position: absolute;
-    top: 70px;
-    left: 0px;
-    z-index: 100;
-    font-size: 50px;
-}
-
-
-.audio_control{
-    position: absolute;
-    top: 750px;
-    left: 1100px;
-    width: 600px;
-    height: 500px;
+    height: 1915px;
+    /* overflow-x: hidden; */
+    /* background-color: #ffffff; */
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
 }
 
-#playBtn,#pauseBtn{
-    width: 30%;
-    height: 100px;
+label{
+    font-size: 40px;
+    color: #fff;
+    width: 540px;
+    height: 150px;
+    background-image: linear-gradient(to left top ,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3));
+    border: #fff 2px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 30px;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+label input{
+    width: 90%;
+}
+
+#singerName,#musicName,#uploadImg,#uploadMusic,#uploadLogo,#uploadColor{
+    z-index: 100;
+    font-size: 40px;
+}
+
+.uploadImg{
+    height: 250px;
+}
+
+.uploadLogo{
+    height: 450px;
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    height: 5px;
+    border-radius: 2.5px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width:10px;
+    height:30px;
+    background:rgba(255, 255, 255, 1);
+    border-radius: 3px;
+    box-shadow: #494949 1px 1px 5px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.uploadLogo > input[type="range"]{
+    margin-bottom: 10px;
+}
+
+.audio_control{
+    width: 540px;
+    height: 400px;
+    background-image: linear-gradient(to left top ,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3));
+    border: #fff 2px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 30px;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.audio_control>p{
+    color: #fff;
     font-size: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+#audioVolume[type="range"]{
+    margin: 30px 0;
+}
+
+#playBtn,#pauseBtn{
+    width: 100%;
+    height: 70px;
+    font-size: 40px;
     background-color: #ffffff;
     cursor: pointer;
-    margin-right: 10px;
+    margin-top: 10px;
+    border: none;
+}
+
+audio {
+    width: 100%;
+}
+
+audio::-webkit-media-controls-panel { /*控制面板*/
+    
+}
+
+audio::-webkit-media-controls-play-button{/* 播放按鈕 */
+    display: none;
+}
+
+audio::-webkit-media-controls-mute-button{ /* 音量按鈕 */
+    display: none;
+}
+
+audio::-webkit-media-controls-time-remaining-display{ /* 目前播放時長 */
+    display: none;
+}
+
+audio::-webkit-media-controls-current-time-display{/* 總時長 */
+    display: none;
 }
 
 @keyframes CDplay{
