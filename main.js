@@ -41,12 +41,12 @@ $("#uploadMusic").change(function () {
 
     $('#playBtn').on('click', function () {
         audio.play()
-        $('.CDrotate').css('animation-play-state', 'running')
+        $('.CDrotate,.singerName,.musicName').css('animation-play-state', 'running')
     })
 
     $('#pauseBtn').on('click', function () {
         audio.pause()
-        $('.CDrotate').css('animation-play-state', 'paused')
+        $('.CDrotate,.singerName,.musicName').css('animation-play-state', 'paused')
     })
 
     //每秒偵測進度條位置
@@ -170,6 +170,87 @@ $('#noShadow').on('input', function () {
     $("#logoImg").css('filter', 'none')
 })
 
+let singerName_wrap,singerName,musicName_wrap,musicName;
+//歌手名跑馬燈
+$('#singerName').on('change', function () {
+
+    $(".singerName").html($(this).val())
+
+    singerName_wrap = $(".singerName_wrap").width() //容器寬
+    singerName = $(".singerName").width()  //內文寬
+
+    if (singerName > singerName_wrap) {
+        $(".singerName").css({
+            'transform': 'none',
+            'animation-duration': (singerName * 0.01) + 's',
+            'animation-name':'marquee_singerName'
+        })
+
+        $('head').append(`
+            <style>
+                @keyframes marquee_singerName {
+                    0% {
+                        left:0px;
+                    }
+
+                    100% {
+                        left: -`+ (singerName - singerName_wrap) + `px;
+                    }
+                }
+            </style>
+        `)
+
+    } else if (singerName <= singerName_wrap) {
+        $(".singerName").css({
+            'transform': 'translateX(-50%)',
+            'left': '50%',
+            'animation-name':'xx'
+        })
+    }
+
+})
+
+//歌名跑馬燈
+$('#musicName').on('change', function () {
+
+    $(".musicName").html($(this).val())
+
+    musicName_wrap = $(".musicName_wrap").width() //容器寬
+    musicName = $(".musicName").width()  //內文寬
+
+    if (musicName > musicName_wrap) {
+        $(".musicName").css({
+            'transform': 'none',
+            'animation-duration': (musicName * 0.01) + 's',
+            'animation-name':'marquee_musicName'
+        })
+
+        $('head').append(`
+            <style>
+                @keyframes marquee_musicName {
+                    0% {
+                        left:0px;
+                    }
+
+                    100% {
+                        left: -`+ (musicName - musicName_wrap) + `px;
+                    }
+                }
+            </style>
+        `)
+
+    } else if (musicName <= musicName_wrap) {
+        $(".musicName").css({
+            'transform': 'translateX(-50%)',
+            'left': '50%',
+            'animation-name':'xx'
+        })
+    }
+
+})
+
+
+
 function uploadlogoImg(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -194,9 +275,5 @@ function uploadColor(input) {
     $('.musicName').css('color', input)
     $('.gradient,#progress_dot,#progress_bar').css('background-color', input)
     color = input
-}
-
-function singerNameMarquee() {
-
 }
 

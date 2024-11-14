@@ -182,15 +182,16 @@ body {
     width: 70%;
     height: 70px;
     overflow: hidden;
-    /* background-color: aqua; */
 }
 
 .singerName{
     position: absolute;
     top: 0px;
-    left: 0%;
+    left: 50%;
+    transform: translateX(-50%);
     height: 70px;
     font-size: 50px;
+    line-height: 70px;
     text-align: center;
     color: #c9c9c9;
     font-family: "Noto Sans SC", sans-serif;
@@ -199,6 +200,9 @@ body {
     margin: 0;
     padding: 0;
     white-space: nowrap;
+    animation: marquee_singerName infinite linear alternate;
+    animation-duration: 5s;
+    animation-play-state: paused;
 }
 
 .musicName_wrap{
@@ -213,6 +217,8 @@ body {
 .musicName{
     position: absolute;
     top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
     height: 100%;
     font-size: 120px;
     line-height: 120px;
@@ -224,6 +230,9 @@ body {
     margin: 0;
     padding: 0;
     white-space: nowrap;
+    animation: marquee_musicName infinite linear alternate;
+    animation-duration: 5s;
+    animation-play-state: paused;
 }
 
 .control_panel{
@@ -255,7 +264,7 @@ label{
 }
 
 label input{
-    width: 90%;
+    width: 100%;
 }
 
 #singerName,#musicName,#uploadImg,#uploadMusic,#uploadLogo,#uploadColor{
@@ -323,8 +332,10 @@ input[type="range"]::-webkit-slider-thumb{
     background-image: linear-gradient(to left top ,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3));
     border: #fff 2px solid;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    align-content: center;
     padding: 0 30px;
     border-radius: 20px;
     margin: 10px 0;
@@ -334,44 +345,37 @@ input[type="range"]::-webkit-slider-thumb{
     color: #fff;
     font-size: 50px;
     padding: 0;
-    margin: 0;
+    margin: 30px 0;
+    margin-right: 10px;
 }
 
 #audioVolume[type="range"]{
-    margin: 30px 0;
+    width: 79%;
+    margin: 60px 0;
 }
 
 #playBtn,#pauseBtn{
-    width: 100%;
+    width: 49%;
     height: 70px;
     font-size: 40px;
-    background-color: #ffffff;
     cursor: pointer;
-    margin-top: 10px;
     border: none;
+}
+
+#playBtn{
+    margin-right: 10px;
 }
 
 audio {
     width: 100%;
 }
 
-audio::-webkit-media-controls-panel { /*控制面板*/
-    
-}
-
-audio::-webkit-media-controls-play-button{/* 播放按鈕 */
-    display: none;
-}
-
-audio::-webkit-media-controls-mute-button{ /* 音量按鈕 */
-    display: none;
-}
-
-audio::-webkit-media-controls-time-remaining-display{ /* 目前播放時長 */
-    display: none;
-}
-
-audio::-webkit-media-controls-current-time-display{/* 總時長 */
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-slider-container,
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-current-time-display{
     display: none;
 }
 
