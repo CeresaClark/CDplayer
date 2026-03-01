@@ -115,11 +115,13 @@ function drawVisualiser(bufferLength, x, barWidth, barHeight, dataArray) {
 //上傳CD
 $("#uploadImg").change(function () {
     uploadCDImg(this);
+    $('#CDImg').show()
 });
 
 //上傳Logo
 $("#uploadLogo").change(function () {
     uploadlogoImg(this);
+    $('.logowrap').show()
 });
 
 //輸入代表色
@@ -276,4 +278,3 @@ function uploadColor(input) {
     $('.gradient,#progress_dot,#progress_bar').css('background-color', input)
     color = input
 }
-

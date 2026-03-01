@@ -35,7 +35,7 @@ body {
     transform-origin: 50% 50%;
     width: 1358px;
     height: 1358px;
-    -webkit-mask: url(img/CD.png);
+    -webkit-mask: url(CD.png);
     animation: CDplay 20s infinite linear;
     animation-play-state: paused;
 }
@@ -45,6 +45,7 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: 50%;
+    display: none;
 }
 
 .logowrap{
@@ -54,6 +55,7 @@ body {
     width: 100%;
     height: 540px;
     overflow: hidden;
+    display: none;
 }
 
 #logoImg{
