@@ -4,21 +4,22 @@
 body {
     padding: 0;
     margin: 0;
-    width: 2000px;
+    width: 1700px;
     height: 1080px;
-    background-color: #000;
+    background-color: #acacac;
 }
 
-.main{
+.main {
     position: absolute;
     top: 0;
     left: 0;
     width: 1080px;
     height: 1920px;
     background-color: #f2f2f2;
+    overflow: hidden;
 }
 
-.CD{
+.CD {
     position: absolute;
     top: -350px;
     left: 0px;
@@ -28,7 +29,7 @@ body {
     overflow: hidden;
 }
 
-.CDrotate{
+.CDrotate {
     position: absolute;
     top: 0px;
     left: -140px;
@@ -40,7 +41,7 @@ body {
     animation-play-state: paused;
 }
 
-#CDImg{
+#CDImg {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -48,7 +49,7 @@ body {
     display: none;
 }
 
-.logowrap{
+.logowrap {
     position: absolute;
     bottom: 1%;
     left: 0%;
@@ -58,7 +59,7 @@ body {
     display: none;
 }
 
-#logoImg{
+#logoImg {
     position: absolute;
     top: 0%;
     left: 0%;
@@ -68,17 +69,17 @@ body {
     transform: scale(1);
 }
 
-.gradient{
+.gradient {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 350px;
     background-color: #000;
-    -webkit-mask-image: linear-gradient(to bottom,#ffffff,#ffffff00);
+    -webkit-mask-image: linear-gradient(to bottom, #ffffff, #ffffff00);
 }
 
-.wave{
+.wave {
     position: absolute;
     top: 1350px;
     left: 90px;
@@ -90,19 +91,19 @@ body {
     justify-content: space-evenly;
 }
 
-#canvas{
+#canvas {
     position: absolute;
     left: -8075px;
 }
 
-.wave div{
+.wave div {
     width: 100%;
     height: 5px;
     z-index: 1;
     background-color: #f2f2f2;
 }
 
-.audio_progress{
+.audio_progress {
     position: absolute;
     top: 1620px;
     left: 8%;
@@ -111,7 +112,7 @@ body {
     pointer-events: none;
 }
 
-#progress_bg{
+#progress_bg {
     position: absolute;
     top: 30px;
     left: 0;
@@ -124,14 +125,14 @@ body {
     overflow: hidden;
 }
 
-.progress_dotBox{
+.progress_dotBox {
     position: absolute;
     top: 13.5px;
     width: calc(100% - 43px);
     height: 43px;
 }
 
-#progress_dot{
+#progress_dot {
     position: absolute;
     top: 0px;
     left: 0%;
@@ -141,7 +142,7 @@ body {
     background-color: #000;
 }
 
-#progress_bar{
+#progress_bar {
     position: absolute;
     top: -5px;
     left: -100%;
@@ -153,7 +154,7 @@ body {
 }
 
 
-.fakemenu{
+.fakemenu {
     position: absolute;
     top: 66px;
     left: 70px;
@@ -162,7 +163,8 @@ body {
     background-color: #fff;
 }
 
-.fakemenu::before,.fakemenu::after{
+.fakemenu::before,
+.fakemenu::after {
     position: absolute;
     content: '';
     top: 30px;
@@ -172,12 +174,12 @@ body {
     background-color: #fff;
 }
 
-.fakemenu::after{
+.fakemenu::after {
     top: 60px;
 }
 
 
-.singerName_wrap{
+.singerName_wrap {
     position: absolute;
     top: 1126px;
     left: 15%;
@@ -186,7 +188,7 @@ body {
     overflow: hidden;
 }
 
-.singerName{
+.singerName {
     position: absolute;
     top: 0px;
     left: 50%;
@@ -207,7 +209,7 @@ body {
     animation-play-state: paused;
 }
 
-.musicName_wrap{
+.musicName_wrap {
     position: absolute;
     top: 1195px;
     left: 2.5%;
@@ -216,7 +218,7 @@ body {
     overflow: hidden;
 }
 
-.musicName{
+.musicName {
     position: absolute;
     top: 0px;
     left: 50%;
@@ -237,81 +239,83 @@ body {
     animation-play-state: paused;
 }
 
-.control_panel{
+.control_panel {
     position: absolute;
     top: 5px;
     left: 1100px;
     width: 600px;
     height: 1915px;
-    /* overflow-x: hidden; */
-    /* background-color: #ffffff; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 
-label{
+label {
     font-size: 40px;
-    color: #fff;
+    color: #474747;
     width: 540px;
     height: 150px;
-    background-image: linear-gradient(to left top ,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3));
-    border: #fff 2px solid;
+    background-image: linear-gradient(to left top, #e7e7e7, #ffffff);
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0 30px;
-    border-radius: 20px;
+    border-radius: 10px;
     margin: 10px 0;
 }
 
-label input{
+label input {
     width: 100%;
 }
 
-#singerName,#musicName,#uploadImg,#uploadMusic,#uploadLogo,#uploadColor{
+#singerName,
+#musicName,
+#uploadImg,
+#uploadMusic,
+#uploadLogo,
+#uploadColor {
     z-index: 100;
     font-size: 40px;
 }
 
-.uploadImg{
+.uploadImg {
     height: 250px;
 }
 
-.uploadLogo{
+.uploadLogo {
     height: 500px;
 }
 
-input[type="range"]{
+input[type="range"] {
     -webkit-appearance: none;
     height: 5px;
     border-radius: 2.5px;
-    background-color: #fff;
+    background-color: #474747;
     cursor: pointer;
     margin-top: 20px;
 }
 
-input[type="range"]::-webkit-slider-thumb{
+input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width:10px;
-    height:30px;
-    background:rgba(255, 255, 255, 1);
+    width: 10px;
+    height: 30px;
+    background: #c5c5c5;
     border-radius: 3px;
     box-shadow: #494949 1px 1px 5px;
     cursor: pointer;
     margin: 0;
 }
 
-.uploadLogo > input[type="range"]{
+.uploadLogo>input[type="range"] {
     margin-bottom: 10px;
 }
 
-.radio{
+.radio {
     display: flex;
     margin-top: 5px;
 }
 
-.radio label{
+.radio label {
     background: transparent;
     border: none;
     flex-direction: row;
@@ -323,48 +327,50 @@ input[type="range"]::-webkit-slider-thumb{
     margin: 0;
 }
 
-.radio label input{
+.radio label input {
     width: 30px;
     height: 30px;
 }
 
-.audio_control{
+.audio_control {
     width: 540px;
     height: 400px;
-    background-image: linear-gradient(to left top ,rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3));
-    border: #fff 2px solid;
+    background-image: linear-gradient(to left top, #e7e7e7, #ffffff);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
     padding: 0 30px;
-    border-radius: 20px;
+    border-radius: 10px;
     margin: 10px 0;
 }
 
-.audio_control > p{
-    color: #fff;
+.audio_control>p {
+    color: #474747;
     font-size: 50px;
     padding: 0;
     margin: 30px 0;
     margin-right: 10px;
 }
 
-#audioVolume[type="range"]{
+#audioVolume[type="range"] {
     width: 79%;
     margin: 60px 0;
 }
 
-#playBtn,#pauseBtn{
+#playBtn,
+#pauseBtn {
     width: 49%;
     height: 70px;
     font-size: 40px;
     cursor: pointer;
     border: none;
+    background-color: #efefef;
+    border: #474747 1px solid;
 }
 
-#playBtn{
+#playBtn {
     margin-right: 10px;
 }
 
@@ -377,15 +383,16 @@ audio::-webkit-media-controls-volume-slider-container,
 audio::-webkit-media-controls-volume-slider,
 audio::-webkit-media-controls-mute-button,
 audio::-webkit-media-controls-time-remaining-display,
-audio::-webkit-media-controls-current-time-display{
+audio::-webkit-media-controls-current-time-display {
     display: none;
 }
 
-@keyframes CDplay{
-    0%{
+@keyframes CDplay {
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+
+    100% {
         transform: rotate(360deg);
     }
 }
